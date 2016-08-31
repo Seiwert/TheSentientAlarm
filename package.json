@@ -1,0 +1,23 @@
+{
+  "name": "the_sentient_alarm",
+  "version": "0.0.1",
+  "description": "Alarm clock that uses a webcam to track a user to make sure that they wake up.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seiwert/TheSentientAlarm.git"
+  },
+  "author": "Adam Seiwert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Seiwert/TheSentientAlarm/issues"
+  },
+  "homepage": "https://github.com/Seiwert/TheSentientAlarm#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "tracking": "^1.1.2"
+  }
+}
