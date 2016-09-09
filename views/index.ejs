@@ -2,24 +2,38 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>tracking.js - first tracking</title>
+  <title>Test Bed</title>
   <script src="js/tracking-min.js"></script>
   <script src="js/face-min.js"></script>
+  <link rel="stylesheet" href="css/example.css">
 </head>
 <body>
     <h1>Hello World</h1>
 
-  <video id="myVideo" width="400" height="300" preload autoplay loop muted></video>
+  <div class="demo">
+    <video id="myVideo" width="600" height="450" preload autoplay loop muted></video>
+    <canvas id="canvas" width="600" height="450"></canvas>
+  </div>
   <script>
   var objects = new tracking.ObjectTracker("face");
-  
+  var canvas = document.getElementById('canvas');
+  var context = canvas.getContext('2d');
 
   objects.on('track', function(event) {
     if (event.data.length === 0) {
       // No objects were detected in this frame.
-    } else {
+    } 
+    else {
       event.data.forEach(function(rect) {
         console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
+
+          context.strokeStyle = "#000";
+          context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+          context.font = '11px Helvetica';
+          context.fillStyle = "#fff";
+          context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+          context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+
       });
     }
   });
