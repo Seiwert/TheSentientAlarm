@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Test Bed</title>
-  <script src="js/tracking-min.js"></script>
-  <script src="js/face-min.js"></script>
+  <script src="js/tracking.js"></script>
   <link rel="stylesheet" href="css/example.css">
 </head>
 <body>
@@ -14,14 +13,28 @@
     <video id="myVideo" width="600" height="450" preload autoplay loop muted></video>
     <canvas id="canvas" width="600" height="450"></canvas>
   </div>
+
   <script>
-  var objects = new tracking.ObjectTracker("face");
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
 
-  objects.on('track', function(event) {
+  tracking.ColorTracker.registerColor('skin', function(r,g,b) {
+    var threshold = 10,
+     dr = r - 204,
+     dg = g - 148,
+     db = b - 148;
+
+     if( dr >= threshold && dg >= threshold && db >= threshold) {
+       return true;
+     }
+     return false;
+  });
+
+  var colors = new tracking.ColorTracker(['skin']);
+
+  colors.on('track', function(event) {
     if (event.data.length === 0) {
-      // No objects were detected in this frame.
+      // No skin tone was detected in this frame.
     } 
     else {
       event.data.forEach(function(rect) {
@@ -38,7 +51,7 @@
     }
   });
 
-  tracking.track('#myVideo', objects, {camera: true});
+  tracking.track('#myVideo', colors, {camera: true});
   </script>
 </body>
 </html>
