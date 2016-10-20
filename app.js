@@ -1,4 +1,6 @@
 var express = require('express'),
+db = require('./db'),
+sessions = require('client-sessions'),
 app = express();
 
 app.set('view engine', 'ejs');
