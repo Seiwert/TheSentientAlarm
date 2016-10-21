@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Seiwert/TheSentientAlarm#readme",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "client-sessions": "^0.7.0",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
