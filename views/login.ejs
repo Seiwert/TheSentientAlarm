@@ -3,24 +3,34 @@
 <head>
   <meta charset="utf-8">
   <title>Login</title>
-  <link rel="stylesheet" href="css/example.css">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/alarm.css">
 </head>
 <body>
 
-    <div class="jumbotron col-lg-12 col-centered">
-        <h1 class="text-center">The Sentient Alarm</h1>
+    <div id="TitleBar"class="jumbotron col-lg-12 col-centered">
+        <h1 id="LoginTitle" class="text-center">The Sentient Alarm</h1>
     </div>
 
-    <div class = "container col-lg-4 col-centered">
-        <div class="wrapper">
-            <form action="" method="POST" name="login_form">
-                <input type="password" name="password" placeholder="Password" required=""/>
-                <br>
-                <button name="submit" value="Submit">Submit</button>
-            </form>
-        </div>
+
+<!-- Login element adapted from http://bootsnipp.com/snippets/featured/simple-login -->
+<div class="container">
+    <div class="row">
+            <div class = "container col-centered">
+                <div class="form-login">
+                    <h4>Welcome back.</h4>
+                    </br>
+                    <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
+                    </br>
+                    <div class="wrapper">
+                        <span class="group-btn">     
+                            <a href="#" class="btn btn-primary btn-md"> Submit <i class="fa fa-sign-in"></i></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
     </div>
+</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
