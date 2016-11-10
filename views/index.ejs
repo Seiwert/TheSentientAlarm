@@ -2,63 +2,65 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<title>Test Bed</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Test Bed</title>
 
   <!-- JS References -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
   <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
   <script src="js/bootstrap-slider.min.js"></script>
-	<script src="js/tracking.js"></script>
+  <script src="js/tracking.js"></script>
 
   <!-- CSS References -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap-slider.min.css">
   <link rel="stylesheet" href="css/alarm.css">
 </head>
 
 <body>
 
-	<div class="page-header">
-		<h1>The Sentient Alarm</h1>
-	</div>
+  <div class="page-header">
+    <h1>The Sentient Alarm</h1>
+  </div>
 
 
-	<!-- Tab elements adopted from http://www.w3schools.com/howto/howto_js_tabs.asp -->
+  <!-- Tab elements adopted from http://www.w3schools.com/howto/howto_js_tabs.asp -->
 
-	<ul class="tab">
-		<li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Monday')">Monday</a></li>
-		<li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Tuesday')">Tuesday</a></li>
-		<li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Wednesday')" id="defaultOpen">Wednesday</a></li>
-		<li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Thursday')" id="defaultOpen">Thursday</a></li>
-		<li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Friday')" id="defaultOpen">Friday</a></li>
-		<li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Saturday')" id="defaultOpen">Saturday</a></li>
-		<li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Sunday')" id="defaultOpen">Sunday</a></li>
-	</ul>
+  <ul class="tab">
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Monday')">Monday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Tuesday')">Tuesday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Wednesday')" id="defaultOpen">Wednesday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Thursday')" id="defaultOpen">Thursday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Friday')" id="defaultOpen">Friday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Saturday')" id="defaultOpen">Saturday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Sunday')" id="defaultOpen">Sunday</a></li>
+  </ul>
 
 
-	<div id="Monday" class="tabcontent">
-		<h3>Monday</h3>
-		<p>Monday is the capital of France.</p>
-	</div>
+  <div id="Monday" class="tabcontent">
+    <h3>Monday</h3>
+    <p>Monday is the capital of France.</p>
+  </div>
 
-	<div id="Tuesday" class="tabcontent">
-		<h3>Tuesday</h3>
-		<p>Tuesday is the capital of Japan.</p>
-	</div>
+  <div id="Tuesday" class="tabcontent">
+    <h3>Tuesday</h3>
+    <p>Tuesday is the capital of Japan.</p>
+  </div>
 
-	<div id="Wednesday" class="tabcontent">
+  <div id="Wednesday" class="tabcontent">
     <div class="row">
-      <div class = "container col-centered">
+      <div class="container col-md-8">
         <div class="form">
           <h2>Wednesday</h2>
           <h3>Hours</h3>
           </br>
-          <input id="hour-slider" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1" data-slider-value="8"/>
+          <input id="hour-slider" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
+            data-slider-value="8" />
           </br>
           <h3>Minutes</h3>
           </br>
-          <input id="minute-slider" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1" data-slider-value="5"/>
+          <input id="minute-slider" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
+            data-slider-value="5" />
           </br>
           </br>
           <div class="switch6" id="AM-PM">
@@ -70,7 +72,7 @@
                 </span>
                 <a class="btn btn-primary"></a>
             </label>
-				  </div>
+          </div>
           </br>
           </br>
           <h3>Alarm On</h3>
@@ -83,7 +85,7 @@
                 </span>
                 <a class="btn btn-primary"></a>
             </label>
-				  </div>
+          </div>
         </div>
       </div>
     </div>
@@ -100,27 +102,27 @@
 
   </script>
 
-	<div id="Thursday" class="tabcontent">
-		<h3>Thursday</h3>
-		<p>Tuesday is the capital of Japan.</p>
-	</div>
+  <div id="Thursday" class="tabcontent">
+    <h3>Thursday</h3>
+    <p>Tuesday is the capital of Japan.</p>
+  </div>
 
-	<div id="Friday" class="tabcontent">
-		<h3>Friday</h3>
-		<p>Tuesday is the capital of Japan.</p>
-	</div>
+  <div id="Friday" class="tabcontent">
+    <h3>Friday</h3>
+    <p>Tuesday is the capital of Japan.</p>
+  </div>
 
-	<div id="Saturday" class="tabcontent">
-		<h3>Saturday</h3>
-		<p>Tuesday is the capital of Japan.</p>
-	</div>
+  <div id="Saturday" class="tabcontent">
+    <h3>Saturday</h3>
+    <p>Tuesday is the capital of Japan.</p>
+  </div>
 
-	<div id="Sunday" class="tabcontent">
-		<h3>Sunday</h3>
-		<p>Tuesday is the capital of Japan.</p>
-	</div>
+  <div id="Sunday" class="tabcontent">
+    <h3>Sunday</h3>
+    <p>Tuesday is the capital of Japan.</p>
+  </div>
 
-	<script>
+  <script>
     function openDay(evt, cityName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -148,9 +150,9 @@
 
 
 
-	<!-- User tracking camera feed and logic -->
+  <!-- User tracking camera feed and logic -->
 
-	<!-- REMOVE MEEEEEEE
+  <!-- REMOVE MEEEEEEE
 
   <div class="demo">
     <video id="myVideo" width="600" height="450" preload autoplay loop muted></video>
