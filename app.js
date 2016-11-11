@@ -1,11 +1,18 @@
 var express = require('express'),
 db = require('./db'),
 sessions = require('client-sessions'),
+bodyParser = require('body-Parser'),
 app = express();
 
+//Set view engine
 app.set('view engine', 'ejs');
 
+// Set static file dir
 app.use(express.static('public'));
+
+// Initialize middleware
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 // Initialize sessions
 app.use(sessions({
@@ -17,6 +24,8 @@ app.use(sessions({
 
 var controller = require('./endpoints/controller.js');
 app.get('/', controller.getIndex);
+app.post('/', controller.setAlarm);
+
 
 // Need to change this when sessions and user logins are fully implemented.
 app.get('/login', controller.getLogin);

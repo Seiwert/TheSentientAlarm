@@ -1,5 +1,7 @@
 "use strict"
 
+var db = require('../db');
+
 class Controller {
     getIndex(req, res) {
 
@@ -13,6 +15,13 @@ class Controller {
 
         });
     }
+
+    setAlarm(req,res) {
+        console.log(req.body);
+        console.log(req);
+    }
+
+
 }
 
 module.exports = exports = new Controller();
