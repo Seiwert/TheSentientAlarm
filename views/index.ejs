@@ -27,13 +27,13 @@
   <!-- Tab elements adopted from http://www.w3schools.com/howto/howto_js_tabs.asp -->
 
   <ul class="tab">
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Monday')">Monday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Monday')" id="defaultOpen">Monday</a></li>
     <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Tuesday')">Tuesday</a></li>
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Wednesday')" id="defaultOpen">Wednesday</a></li>
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Thursday')" id="defaultOpen">Thursday</a></li>
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Friday')" id="defaultOpen">Friday</a></li>
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Saturday')" id="defaultOpen">Saturday</a></li>
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Sunday')" id="defaultOpen">Sunday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Wednesday')">Wednesday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Thursday')">Thursday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Friday')">Friday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Saturday')">Saturday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Sunday')">Sunday</a></li>
   </ul>
 
 <div class = "container col-lg-4 col-centered">
@@ -41,15 +41,64 @@
 
 
   <div id="Monday" class="tabcontent">
-    <h3>Monday</h3>
-    <p>Monday is the capital of France.</p>
+    <div class="row">
+      <div class="container col-md-8">
+        <div class="form">
+          <h2>Monday</h2>
+          <h3>Hours</h3>
+          </br>
+          <input id="hour-slider_Mon" name="hour-slider_Mon" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
+            data-slider-value="8" />
+          </br>
+          <h3>Minutes</h3>
+          </br>
+          <input id="minute-slider_Mon" name="minute-slider_Mon" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
+            data-slider-value="5" />
+          </br>
+          </br>
+          <div class="switch6" id="AM-PM">
+            <label class="switch6-light" onclick="">
+                <input type="checkbox" name="AMPM_Mon">
+                <span>
+                  <span>AM</span>
+                  <span>PM</span>
+                </span>
+                <a class="btn btn-primary"></a>
+            </label>
+          </div>
+          </br>
+          </br>
+          <h3>Alarm On</h3>
+          <div class="switch6" id="alarmON">
+            <label class="switch6-light" onclick="">
+                <input type="checkbox" name="alarmON_Mon" checked=true value="no">
+                <span>
+                  <span>Yes</span>
+                  <span>No</span>
+                </span>
+                <a class="btn btn-primary"></a>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script>
+  $("#hour-slider_Mon").slider({
+    tooltip: 'always'
+  });
+
+  $("#minute-slider_Mon").slider({
+    tooltip: 'always'
+  });
+  </script>
 
   <div id="Tuesday" class="tabcontent">
     <div class="row">
       <div class="container col-md-8">
         <div class="form">
-          <h2>Wednesday</h2>
+          <h2>Tuesday</h2>
           <h3>Hours</h3>
           </br>
           <input id="hour-slider_Tue" name="hour-slider_Tue" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
@@ -154,24 +203,220 @@
   </script>
 
   <div id="Thursday" class="tabcontent">
-    <h3>Thursday</h3>
-    <p>Tuesday is the capital of Japan.</p>
+    <div class="row">
+      <div class="container col-md-8">
+        <div class="form">
+          <h2>Thursday</h2>
+          <h3>Hours</h3>
+          </br>
+          <input id="hour-slider_Thur" name="hour-slider_Thur" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
+            data-slider-value="8" />
+          </br>
+          <h3>Minutes</h3>
+          </br>
+          <input id="minute-slider_Thur" name="minute-slider_Thur" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
+            data-slider-value="5" />
+          </br>
+          </br>
+          <div class="switch6" id="AM-PM">
+            <label class="switch6-light" onclick="">
+                <input type="checkbox" name="AMPM_Thur">
+                <span>
+                  <span>AM</span>
+                  <span>PM</span>
+                </span>
+                <a class="btn btn-primary"></a>
+            </label>
+          </div>
+          </br>
+          </br>
+          <h3>Alarm On</h3>
+          <div class="switch6" id="alarmON">
+            <label class="switch6-light" onclick="">
+                <input type="checkbox" name="alarmON_Thur" checked=true value="no">
+                <span>
+                  <span>Yes</span>
+                  <span>No</span>
+                </span>
+                <a class="btn btn-primary"></a>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script>
+  $("#hour-slider_Thur").slider({
+    tooltip: 'always'
+  });
+
+  $("#minute-slider_Thur").slider({
+    tooltip: 'always'
+  });
+  </script>
 
   <div id="Friday" class="tabcontent">
-    <h3>Friday</h3>
-    <p>Tuesday is the capital of Japan.</p>
+    <div class="row">
+      <div class="container col-md-8">
+        <div class="form">
+          <h2>Friday</h2>
+          <h3>Hours</h3>
+          </br>
+          <input id="hour-slider_Fri" name="hour-slider_Fri" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
+            data-slider-value="8" />
+          </br>
+          <h3>Minutes</h3>
+          </br>
+          <input id="minute-slider_Fri" name="minute-slider_Fri" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
+            data-slider-value="5" />
+          </br>
+          </br>
+          <div class="switch6" id="AM-PM">
+            <label class="switch6-light" onclick="">
+                <input type="checkbox" name="AMPM_Fri">
+                <span>
+                  <span>AM</span>
+                  <span>PM</span>
+                </span>
+                <a class="btn btn-primary"></a>
+            </label>
+          </div>
+          </br>
+          </br>
+          <h3>Alarm On</h3>
+          <div class="switch6" id="alarmON">
+            <label class="switch6-light" onclick="">
+                <input type="checkbox" name="alarmON_Fri" checked=true value="no">
+                <span>
+                  <span>Yes</span>
+                  <span>No</span>
+                </span>
+                <a class="btn btn-primary"></a>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script>
+  $("#hour-slider_Fri").slider({
+    tooltip: 'always'
+  });
+
+  $("#minute-slider_Fri").slider({
+    tooltip: 'always'
+  });
+  </script>
 
   <div id="Saturday" class="tabcontent">
-    <h3>Saturday</h3>
-    <p>Tuesday is the capital of Japan.</p>
+    <div class="row">
+      <div class="container col-md-8">
+        <div class="form">
+          <h2>Saturday</h2>
+          <h3>Hours</h3>
+          </br>
+          <input id="hour-slider_Sat" name="hour-slider_Sat" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
+            data-slider-value="8" />
+          </br>
+          <h3>Minutes</h3>
+          </br>
+          <input id="minute-slider_Sat" name="minute-slider_Sat" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
+            data-slider-value="5" />
+          </br>
+          </br>
+          <div class="switch6" id="AM-PM">
+            <label class="switch6-light" onclick="">
+                <input type="checkbox" name="AMPM_Sat">
+                <span>
+                  <span>AM</span>
+                  <span>PM</span>
+                </span>
+                <a class="btn btn-primary"></a>
+            </label>
+          </div>
+          </br>
+          </br>
+          <h3>Alarm On</h3>
+          <div class="switch6" id="alarmON">
+            <label class="switch6-light" onclick="">
+                <input type="checkbox" name="alarmON_Sat" checked=true value="no">
+                <span>
+                  <span>Yes</span>
+                  <span>No</span>
+                </span>
+                <a class="btn btn-primary"></a>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <script>
+  $("#hour-slider_Sat").slider({
+    tooltip: 'always'
+  });
+
+  $("#minute-slider_Sat").slider({
+    tooltip: 'always'
+  });
+  </script>
+
   <div id="Sunday" class="tabcontent">
-    <h3>Sunday</h3>
-    <p>Tuesday is the capital of Japan.</p>
+    <div class="row">
+      <div class="container col-md-8">
+        <div class="form">
+          <h2>Sunday</h2>
+          <h3>Hours</h3>
+          </br>
+          <input id="hour-slider_Sun" name="hour-slider_Sun" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
+            data-slider-value="8" />
+          </br>
+          <h3>Minutes</h3>
+          </br>
+          <input id="minute-slider_Sun" name="minute-slider_Sun" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
+            data-slider-value="5" />
+          </br>
+          </br>
+          <div class="switch6" id="AM-PM">
+            <label class="switch6-light" onclick="">
+                <input type="checkbox" name="AMPM_Sun">
+                <span>
+                  <span>AM</span>
+                  <span>PM</span>
+                </span>
+                <a class="btn btn-primary"></a>
+            </label>
+          </div>
+          </br>
+          </br>
+          <h3>Alarm On</h3>
+          <div class="switch6" id="alarmON">
+            <label class="switch6-light" onclick="">
+                <input type="checkbox" name="alarmON_Sun" checked=true value="no">
+                <span>
+                  <span>Yes</span>
+                  <span>No</span>
+                </span>
+                <a class="btn btn-primary"></a>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script>
+  $("#hour-slider_Sun").slider({
+    tooltip: 'always'
+  });
+
+  $("#minute-slider_Sun").slider({
+    tooltip: 'always'
+  });
+  </script>
 
 <div class="row">
   <input type="submit" value="Set Alarms" class="btn btn-primary btn-lg btn-block" id="SetAlarmsSubmit">
