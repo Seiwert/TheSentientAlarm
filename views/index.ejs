@@ -27,13 +27,13 @@
   <!-- Tab elements adopted from http://www.w3schools.com/howto/howto_js_tabs.asp -->
 
   <ul class="tab">
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Monday')" id="defaultOpen">Monday</a></li>
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Tuesday')">Tuesday</a></li>
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Wednesday')">Wednesday</a></li>
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Thursday')">Thursday</a></li>
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Friday')">Friday</a></li>
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Saturday')">Saturday</a></li>
-    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Sunday')">Sunday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Monday')" id="Mon">Monday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Tuesday')" id="Tue">Tuesday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Wednesday')" id="Wed">Wednesday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Thursday')" id="Thu">Thursday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Friday')" id="Fri">Friday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Saturday')" id="Sat">Saturday</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openDay(event, 'Sunday')" id="Sun">Sunday</a></li>
   </ul>
 
 <div class = "container col-lg-4 col-centered">
@@ -440,8 +440,11 @@
         evt.currentTarget.className += " active";
     }
 
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
+    // Open the element that is today's date.
+    var today = new Date().toString();
+    today = today.split(" ")[0]; //Gets the current day.
+    document.getElementById(today).click();
+
     </script>
 
 
