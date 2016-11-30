@@ -23,7 +23,7 @@ app.use(sessions({
 }));
 
 var controller = require('./endpoints/controller.js');
-app.get('/', controller.getIndex);
+app.get('/', controller.getIndex); // TODO >> Need to pass user data eventually.
 app.post('/', controller.setAlarm);
 
 
