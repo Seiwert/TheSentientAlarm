@@ -13,7 +13,6 @@ class Controller {
                 console.error(err);
                 return res.sendStatus(500);
             }
-
             res.render('index', {
                 alarms: times
             });
@@ -28,7 +27,6 @@ class Controller {
 
     // Updates database with alarm time changes.
     setAlarm(req,res) {
-        console.log(req.body);
 
         // Update Monday alarm
         var MonON = 0;

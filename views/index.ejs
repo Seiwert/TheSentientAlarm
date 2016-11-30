@@ -48,17 +48,17 @@
           <h3>Hours</h3>
           </br>
           <input id="hourSlider_Mon" name="hourSlider_Mon" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
-            data-slider-value="8" />
+            data-slider-value= <%=alarms[0].hours%> />
           </br>
           <h3>Minutes</h3>
           </br>
           <input id="minuteSlider_Mon" name="minuteSlider_Mon" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
-            data-slider-value="5" />
+            data-slider-value= <%=alarms[0].minutes%> />
           </br>
           </br>
           <div class="switch6" id="AM-PM">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="AMPM_Mon">
+                <input type="checkbox" name="AMPM_Mon" <% if(alarms[0].ampm == 1) { %> checked=true <% } %> >
                 <span>
                   <span>AM</span>
                   <span>PM</span>
@@ -71,7 +71,7 @@
           <h3>Alarm On</h3>
           <div class="switch6" id="alarmON">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="alarmON_Mon" checked=true value="no">
+                <input type="checkbox" name="alarmON_Mon" <% if(alarms[0].alarmON == 0) { %> checked=true <% } %> value="no">
                 <span>
                   <span>Yes</span>
                   <span>No</span>
@@ -102,17 +102,17 @@
           <h3>Hours</h3>
           </br>
           <input id="hourSlider_Tue" name="hourSlider_Tue" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
-            data-slider-value="8" />
+            data-slider-value= <%=alarms[1].hours%>  />
           </br>
           <h3>Minutes</h3>
           </br>
           <input id="minuteSlider_Tue" name="minuteSlider_Tue" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
-            data-slider-value="5" />
+            data-slider-value=<%=alarms[1].minutes%> />
           </br>
           </br>
           <div class="switch6" id="AM-PM">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="AMPM_Tue">
+                <input type="checkbox" name="AMPM_Tue" <% if(alarms[1].ampm == 1) { %> checked=true <% } %>>
                 <span>
                   <span>AM</span>
                   <span>PM</span>
@@ -125,7 +125,7 @@
           <h3>Alarm On</h3>
           <div class="switch6" id="alarmON">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="alarmON_Tue" checked=true value="no">
+                <input type="checkbox" name="alarmON_Tue" <% if(alarms[1].alarmON == 0) { %> checked=true <% } %> value="no">
                 <span>
                   <span>Yes</span>
                   <span>No</span>
@@ -156,17 +156,17 @@
           <h3>Hours</h3>
           </br>
           <input id="hourSlider_Wed" name="hourSlider_Wed" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
-            data-slider-value="8" />
+            data-slider-value= <%=alarms[2].hours%>  />
           </br>
           <h3>Minutes</h3>
           </br>
           <input id="minuteSlider_Wed" name="minuteSlider_Wed" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
-            data-slider-value="5" />
+            data-slider-value=<%=alarms[2].minutes%> />
           </br>
           </br>
           <div class="switch6" id="AM-PM">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="AMPM_Wed">
+                <input type="checkbox" name="AMPM_Wed" <% if(alarms[2].ampm == 1) { %> checked=true <% } %>>
                 <span>
                   <span>AM</span>
                   <span>PM</span>
@@ -179,7 +179,7 @@
           <h3>Alarm On</h3>
           <div class="switch6" id="alarmON">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="alarmON_Wed" checked=true value="no">
+                <input type="checkbox" name="alarmON_Wed" <% if(alarms[2].alarmON == 0) { %> checked=true <% } %>value="no">
                 <span>
                   <span>Yes</span>
                   <span>No</span>
@@ -210,17 +210,17 @@
           <h3>Hours</h3>
           </br>
           <input id="hourSlider_Thur" name="hourSlider_Thur" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
-            data-slider-value="8" />
+            data-slider-value= <%=alarms[3].hours%> />
           </br>
           <h3>Minutes</h3>
           </br>
           <input id="minuteSlider_Thur" name="minuteSlider_Thur" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
-            data-slider-value="5" />
+            data-slider-value=<%=alarms[3].minutes%> />
           </br>
           </br>
           <div class="switch6" id="AM-PM">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="AMPM_Thur">
+                <input type="checkbox" name="AMPM_Thur" <% if(alarms[3].ampm == 1) { %> checked=true <% } %>>
                 <span>
                   <span>AM</span>
                   <span>PM</span>
@@ -233,7 +233,7 @@
           <h3>Alarm On</h3>
           <div class="switch6" id="alarmON">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="alarmON_Thur" checked=true value="no">
+                <input type="checkbox" name="alarmON_Thur" <% if(alarms[3].alarmON == 0) { %> checked=true <% } %> value="no">
                 <span>
                   <span>Yes</span>
                   <span>No</span>
@@ -264,17 +264,17 @@
           <h3>Hours</h3>
           </br>
           <input id="hourSlider_Fri" name="hourSlider_Fri" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
-            data-slider-value="8" />
+            data-slider-value= <%=alarms[4].hours%> />
           </br>
           <h3>Minutes</h3>
           </br>
           <input id="minuteSlider_Fri" name="minuteSlider_Fri" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
-            data-slider-value="5" />
+            data-slider-value=<%=alarms[4].minutes%> />
           </br>
           </br>
           <div class="switch6" id="AM-PM">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="AMPM_Fri">
+                <input type="checkbox" name="AMPM_Fri" <% if(alarms[4].ampm == 1) { %> checked=true <% } %>>
                 <span>
                   <span>AM</span>
                   <span>PM</span>
@@ -287,7 +287,7 @@
           <h3>Alarm On</h3>
           <div class="switch6" id="alarmON">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="alarmON_Fri" checked=true value="no">
+                <input type="checkbox" name="alarmON_Fri" <% if(alarms[4].alarmON == 0) { %> checked=true <% } %> value="no">
                 <span>
                   <span>Yes</span>
                   <span>No</span>
@@ -318,17 +318,17 @@
           <h3>Hours</h3>
           </br>
           <input id="hourSlider_Sat" name="hourSlider_Sat" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
-            data-slider-value="8" />
+            data-slider-value= <%=alarms[5].hours%> />
           </br>
           <h3>Minutes</h3>
           </br>
           <input id="minuteSlider_Sat" name="minuteSlider_Sat" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
-            data-slider-value="5" />
+            data-slider-value=<%=alarms[5].minutes%> />
           </br>
           </br>
           <div class="switch6" id="AM-PM">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="AMPM_Sat">
+                <input type="checkbox" name="AMPM_Sat" <% if(alarms[5].ampm == 1) { %> checked=true <% } %>>
                 <span>
                   <span>AM</span>
                   <span>PM</span>
@@ -341,7 +341,7 @@
           <h3>Alarm On</h3>
           <div class="switch6" id="alarmON">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="alarmON_Sat" checked=true value="no">
+                <input type="checkbox" name="alarmON_Sat" <% if(alarms[5].alarmON == 0) { %> checked=true <% } %>value="no">
                 <span>
                   <span>Yes</span>
                   <span>No</span>
@@ -372,17 +372,17 @@
           <h3>Hours</h3>
           </br>
           <input id="hourSlider_Sun" name="hourSlider_Sun" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="12" data-slider-step="1"
-            data-slider-value="8" />
+            data-slider-value= <%=alarms[6].hours%> />
           </br>
           <h3>Minutes</h3>
           </br>
           <input id="minuteSlider_Sun" name="minuteSlider_Sun" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="59" data-slider-step="1"
-            data-slider-value="5" />
+            data-slider-value=<%=alarms[6].minutes%> />
           </br>
           </br>
           <div class="switch6" id="AM-PM">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="AMPM_Sun">
+                <input type="checkbox" name="AMPM_Sun" <% if(alarms[6].ampm == 1) { %> checked=true <% } %>>
                 <span>
                   <span>AM</span>
                   <span>PM</span>
@@ -395,7 +395,7 @@
           <h3>Alarm On</h3>
           <div class="switch6" id="alarmON">
             <label class="switch6-light" onclick="">
-                <input type="checkbox" name="alarmON_Sun" checked=true value="no">
+                <input type="checkbox" name="alarmON_Sun" <% if(alarms[6].alarmON == 0) { %> checked=true <% } %> value="no">
                 <span>
                   <span>Yes</span>
                   <span>No</span>
