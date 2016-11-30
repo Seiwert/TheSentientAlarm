@@ -13,6 +13,25 @@ db.serialize(function() {
     // time is the current set time for the alarm on a given day. Represented in military time.
     // alarmON is a boolean int value that determines if the alarm should be on for that day.
     // this table relates to users table.
-    db.run("CREATE TABLE alarms(dayID INTEGER PRIMARY KEY, time INTEGER, alarmON INTEGER, FOREIGN KEY(userID) REFERENCES users(userID))");
+    db.run("CREATE TABLE alarms(dayID INTEGER PRIMARY KEY, time INTEGER, alarmON INTEGER, userID INTEGER, FOREIGN KEY(userID) REFERENCES users(userID))");
 
+
+    // Populate users table with an inital user (me).
+    db.run("INSERT INTO users (password) VALUES ('asdf')") // TODO >> Need to encrypt or something.
+
+    // Populate the alarms table with default data.
+    // Monday 
+    db.run("INSERT INTO alarms (time, alarmON, userID) VALUES (800, 0, 1)")
+    // Tuesday 
+    db.run("INSERT INTO alarms (time, alarmON, userID) VALUES (800, 0, 1)")
+    // Wednesday 
+    db.run("INSERT INTO alarms (time, alarmON, userID) VALUES (800, 0, 1)")
+    // Thursday 
+    db.run("INSERT INTO alarms (time, alarmON, userID) VALUES (800, 0, 1)")
+    // Friday 
+    db.run("INSERT INTO alarms (time, alarmON, userID) VALUES (800, 0, 1)")
+    // Saturday 
+    db.run("INSERT INTO alarms (time, alarmON, userID) VALUES (800, 0, 1)")
+    // Sunday 
+    db.run("INSERT INTO alarms (time, alarmON, userID) VALUES (800, 0, 1)")
 });
