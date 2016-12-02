@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="js/tracking.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+</head>
+
+
+<body>
+
+    <!-- User tracking camera feed and logic -->
+    <div class="demo">
+        <video id="myVideo" width="600" height="450" preload autoplay loop muted></video>
+        <canvas id="canvas" width="600" height="450"></canvas>
+    </div>
+
+    <script>
+  var canvas = document.getElementById('canvas');
+  var context = canvas.getContext('2d');
+  var audio = new Audio('media/Awake.mp3');
+  var Today = new Date().getDay();
+  var initialStart = true;
+  var audioCanPlay = false;
+  var alarmData = [];
+  
+  // Get initial data.
+  $.get("/alarmData", function(data, status) {
+        alarmData = data;
+  })
+
+  // Make audio element loop.
+  audio.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+  }, false);
+
+  tracking.ColorTracker.registerColor('skin', function(r,g,b) {
+    var threshold = 10,
+     dr = r - 204,
+     dg = g - 148,
+     db = b - 148;
+
+     if( dr >= threshold && dg >= threshold && db >= threshold) {
+       return true;
+     }
+     return false;
+  });
+
+  var colors = new tracking.ColorTracker(['skin']);
+
+  colors.on('track', function(event) {
+
+    // TODO >> This is probably really bad and needs to be removed....
+    if(Today != new Date().getDay())
+    {
+      $.get("/alarmData", function(data, status) {
+        alarmData = data;
+      })
+      initialStart = true;
+    }
+
+    // Conditional to make alarm clock initially sound in case of bad lighting or under covers.
+    if ( alarmData[0].alarmON == 1 && 
+       ((alarmData[0].amppm == 1) ? (alarmData[0].hours + 12) : alarmData[0].hours) == new Date().getHours() && 
+       alarmData[0].minutes == new Date().getMinutes() &&
+       initialStart) {
+        audio.play();
+        initialStart = false;
+    }
+
+    // Conditional for alarm clock to sound.
+    if ( alarmData[0].alarmON == 1 && 
+       ((alarmData[0].amppm == 1) ? (alarmData[0].hours + 12) : alarmData[0].hours) == new Date().getHours() && 
+       alarmData[0].minutes <= new Date().getMinutes() &&
+       ((alarmData[0].minutes + 5) % 60) >= new Date().getMinutes() ) {
+          audioCanPlay = true;
+    }
+    else {
+      audioCanPlay = false;
+    }
+
+    if (event.data.length === 0) {
+      // No skin tone was detected in this frame.
+    } 
+    else {
+      event.data.forEach(function(rect) {
+        // Conditional for in bed (turn alarm back on).
+        if(rect.x > 200 && rect.x < 500 && rect.y > 190 && rect.y < 410 && audioCanPlay) {
+          audio.play();
+        }
+        else {
+          audio.pause();
+        }
+
+          // Code to test position tracking.
+//          console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
+
+//          context.strokeStyle = "#000";
+//          context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+//          context.font = '11px Helvetica';
+//          context.fillStyle = "#fff";
+//          context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+//          context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+
+      });
+    }
+  });
+
+  tracking.track('#myVideo', colors, {camera: true});
+  </script>
+
+
+</body>
+
+</html>

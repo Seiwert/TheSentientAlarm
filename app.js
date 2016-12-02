@@ -26,6 +26,8 @@ var controller = require('./endpoints/controller.js');
 app.get('/', controller.getIndex); // TODO >> Need to pass user data eventually.
 app.post('/', controller.setAlarm);
 
+app.get('/alarm', controller.getAlarm);
+app.get('/alarmData', controller.getAlarmData);
 
 // Need to change this when sessions and user logins are fully implemented.
 app.get('/login', controller.getLogin);

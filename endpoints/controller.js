@@ -25,6 +25,23 @@ class Controller {
         });
     }
 
+    getAlarm(req,res) {
+        res.render('alarm', {
+
+        });
+    }
+
+    getAlarmData(req,res) {
+        db.all('SELECT * FROM alarms WHERE USERID=? AND dayID =?', USERID, new Date().getDay(),
+        function(err, alarmData) {
+            if(err) {
+                console.error(err);
+                return res.sendStatus(500);
+            }
+            res.send(alarmData);
+        })
+    }
+
     // Updates database with alarm time changes.
     setAlarm(req,res) {
 
