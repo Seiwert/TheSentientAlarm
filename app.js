@@ -3,7 +3,7 @@ db = require('./db'),
 sessions = require('client-sessions'),
 schedule = require('node-schedule'),
 io = require('socket.io')(8081),
-bodyParser = require('body-Parser'),
+bodyParser = require('body-parser'),
 app = express();
 
 //Set view engine
