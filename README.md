@@ -2,15 +2,15 @@
 ![Alt text](/Senior Project Poster.png?raw=true "Poster")
 
 ## How it works
-![Alt text](/Sentient Alarm 1.png?raw=true "Example")
-This node applet utilizes Tracking.js to do color tracking on a user to figure out there relative position. It automatically
+![Alt text](/Sentient Alarm 1.PNG?raw=true "Example")
+This node applet utilizes Tracking.js to do color tracking on a user to figure out their relative position. It automatically
 determines if a user has crossed the boundary zone and will turn the alarm back on if so. 
 
 ## UI usage
-![Alt text](/Sentient Alarm 2.png?raw=true "User Interface")
+![Alt text](/Sentient Alarm 2.PNG?raw=true "User Interface")
 Currently, the login page isn't tied to anything but the database is set up to use it once it's implemented. As for alarm setting, simply click
-the day of the week you wanna set an alarm and choose a time and then hit set alarm. You can also set multiple days at once and then click set alarm. 
-Once you have set an alarm, navigate to localhost:8080/alarm on your monitoring device.
+the day of the week you wanna set an alarm for and choose a time and then hit "Set Alarms". You can also set multiple days at the same time and then click "Set Alarms". 
+Once you have set an alarm, navigate to "localhost:8080/alarm" on your monitoring device to have it trigger during the alarm time.
 
 ## Installation
 To install, simply clone or download this repo. After that, install Node and use npm to install
