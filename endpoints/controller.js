@@ -123,7 +123,7 @@ class Controller {
        db.run("UPDATE alarms SET hours=?, minutes=?, ampm=?, alarmON=? WHERE userID=? AND dayID=?", parseInt(req.body.hourSlider_Sun), parseInt(req.body.minuteSlider_Sun), SunAMPM, SunON, 1, 7);
 
         
-       res.redirect("/");        
+       res.redirect("/checkAlarm");        
     }
 
 
