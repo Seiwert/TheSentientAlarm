@@ -43,38 +43,33 @@ app.get('/login', controller.getLogin);
 
 // Socket connection settings
 var alarmSounder = io
-    .of('/alarm')
-    .on('userAwake', function(socket) {
-        alarmSounder.emit('alarmOff', {
-            alarm :'off'
-        });
-    });
+    .of('/alarm'); 
 
+// Listen on port localhost port 8080
 app.listen(8080, () => {
     console.log('Listening on port 8080.');
 });
 
+// Pull alarm data for today and schedule Cron to trigger it.
 function setAlarms() {
-    console.log("setALarms got called!!")
     db.all('SELECT * FROM alarms WHERE USERID=? AND dayID =?', 1, new Date().getDay(),
     function(err, alarmData) {
         if(err) {
             console.error(err);
         }
-        console.log(alarmData)
         if(alarmData[0].alarmON == 1) {
             if(alarmData[0].ampm == 1) {
                 alarmData[0].hours += 12
             }
             var setAlarmCron = schedule.scheduleJob(alarmData[0].minutes + ' ' + alarmData[0].hours + ' * * ' + alarmData[0].dayID, function() {
-                console.log("schedule alarm cron ran.")
-                
+                alarmSounder.emit('alarmON', {});
+                setAlarmCron.cancel();
             })
         }
     })
 }
 
-// Cron job setup
+// Check alarms daily in case new ones weren't set to trigger new Crons.
 //run every day of the week at 1am = '0 1 * * 0-7'
 var daily = schedule.scheduleJob('0 1 * * 0-7', function() {
     setAlarms();

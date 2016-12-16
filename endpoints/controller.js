@@ -6,6 +6,7 @@ var USERID = 1; //TODO >> Update this to where it grabs a real userID.
 
 class Controller {
 
+    // Get home page
     getIndex(req, res) {
         db.all('SELECT * FROM alarms WHERE USERID=?', USERID, 
         function(err, times) {
@@ -19,18 +20,20 @@ class Controller {
         })
     }
 
+    // Render login page
     getLogin(req,res) {
         res.render('login', {
 
         });
     }
 
+    // Render alarm page.
     getAlarm(req,res) {
         res.render('alarm', {
-
         });
     }
 
+    // Get's alarm for a given day. Currently not used.
     getAlarmData(req,res) {
         db.all('SELECT * FROM alarms WHERE USERID=? AND dayID =?', USERID, new Date().getDay(),
         function(err, alarmData) {
